@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <EditText
+        android:id="@+id/currencyLeft"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/currencyRight"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/currencyLeft"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="100dp"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"/>
+
+    <TextView
+        android:id="@+id/textCurrencyLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/currencyLeft"
+        app:layout_constraintEnd_toEndOf="@id/currencyLeft"
+        app:layout_constraintTop_toBottomOf="@id/currencyLeft"
+        android:layout_marginTop="50dp"
+        android:textSize="32sp"
+        tools:text="RU"/>
+
+    <TextView
+        android:id="@+id/textCurrencyRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/currencyRight"
+        app:layout_constraintEnd_toEndOf="@id/currencyRight"
+        app:layout_constraintTop_toBottomOf="@id/currencyRight"
+        android:layout_marginTop="50dp"
+        android:textSize="32sp"
+        tools:text="USD"/>
+
+    <Button
+        android:id="@+id/changeCurrencyLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/currencyLeft"
+        app:layout_constraintTop_toBottomOf="@id/textCurrencyLeft"
+        app:layout_constraintEnd_toEndOf="@id/currencyLeft"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/changeCurrencyRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/currencyRight"
+        app:layout_constraintTop_toBottomOf="@id/textCurrencyRight"
+        app:layout_constraintEnd_toEndOf="@id/currencyRight"
+        android:layout_marginTop="50dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
