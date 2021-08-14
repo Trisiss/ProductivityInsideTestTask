@@ -2,9 +2,11 @@ package com.trisiss.productivityinsidetesttask.data.remote
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import com.trisiss.productivityinsidetesttask.data.model.ValCurs
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
 
@@ -12,10 +14,10 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 /**
  * Created by trisiss on 8/14/2021.
  */
-class CurrenciesServiceImpl {
-    val SERVER = "http://www.cbr.ru/"
-    lateinit var retrofit: Retrofit
-    lateinit var currencyApi: CurrencyApi
+class CurrenciesServiceImpl: CurrenciesService {
+    private val SERVER = "http://www.cbr.ru/"
+    var retrofit: Retrofit
+    var currencyApi: CurrencyApi
 
     init {
         retrofit = initRetrofit()
@@ -43,4 +45,6 @@ class CurrenciesServiceImpl {
             .build()
 
     }
+
+    override suspend fun load(): Response<ValCurs> = currencyApi.getValutes()
 }
