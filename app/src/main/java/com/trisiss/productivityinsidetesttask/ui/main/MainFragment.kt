@@ -8,16 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.trisiss.productivityinsidetesttask.DecimalDigitsInputFilter
 import com.trisiss.productivityinsidetesttask.SideElement
 import com.trisiss.productivityinsidetesttask.databinding.MainFragmentBinding
 import com.trisiss.productivityinsidetesttask.ui.SelectDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.lang.NumberFormatException
 import java.math.RoundingMode
-import java.text.NumberFormat
-import java.util.*
 
 class MainFragment : Fragment() {
 
@@ -124,7 +120,8 @@ class MainFragment : Fragment() {
                         if (binding.currencyRight.isFocused) return
                         rightValue = (leftValue * leftCurrency) / rightCurrency
                         // Округляем до двух знаков после запятой
-                        rightValue = rightValue.toBigDecimal().setScale(2, RoundingMode.CEILING).toFloat()
+                        rightValue =
+                            rightValue.toBigDecimal().setScale(2, RoundingMode.CEILING).toFloat()
                         binding.currencyRight.setText(rightValue.toString())
                     }
                     SideElement.RIGHT -> {
@@ -132,7 +129,8 @@ class MainFragment : Fragment() {
                         if (binding.currencyLeft.isFocused) return
                         leftValue = (rightValue * rightCurrency) / leftCurrency
                         // Округляем до двух знаков после запятой
-                        leftValue = leftValue.toBigDecimal().setScale(2, RoundingMode.CEILING).toFloat()
+                        leftValue =
+                            leftValue.toBigDecimal().setScale(2, RoundingMode.CEILING).toFloat()
                         binding.currencyLeft.setText(leftValue.toString())
                     }
                 }

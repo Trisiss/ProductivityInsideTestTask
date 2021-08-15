@@ -9,7 +9,7 @@ import org.koin.core.context.startKoin
 /**
  * Created by trisiss on 8/14/2021.
  */
-class App: Application() {
+class App : Application() {
     override fun onCreate() {
         super.onCreate()
 

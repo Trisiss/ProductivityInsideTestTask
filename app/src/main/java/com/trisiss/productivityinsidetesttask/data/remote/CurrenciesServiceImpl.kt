@@ -2,13 +2,9 @@ package com.trisiss.productivityinsidetesttask.data.remote
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.MapperFeature
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
-
 import com.trisiss.productivityinsidetesttask.data.model.ValCurs
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -21,7 +17,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 /**
  * Created by trisiss on 8/14/2021.
  */
-class CurrenciesServiceImpl: CurrenciesService {
+class CurrenciesServiceImpl : CurrenciesService {
     private val SERVER = "https://www.cbr.ru/"
     var retrofit: Retrofit
     var currencyApi: CurrencyApi

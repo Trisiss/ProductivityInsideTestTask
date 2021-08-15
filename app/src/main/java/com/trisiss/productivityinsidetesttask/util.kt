@@ -6,7 +6,7 @@ import android.text.Spanned
 /**
  * Created by trisiss on 8/14/2021.
  */
-enum class SideElement{
+enum class SideElement {
     RIGHT, LEFT
 }
 
@@ -14,7 +14,7 @@ enum class SideElement{
 /**
  * Фильтр для запрета количества вводимых знаков после запятой
  */
-class DecimalDigitsInputFilter (private val decimalDigits: Int) : InputFilter {
+class DecimalDigitsInputFilter(private val decimalDigits: Int) : InputFilter {
     override fun filter(
         source: CharSequence,
         start: Int,

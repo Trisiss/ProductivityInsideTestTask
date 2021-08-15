@@ -1,7 +1,7 @@
 package com.trisiss.productivityinsidetesttask
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.trisiss.productivityinsidetesttask.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {

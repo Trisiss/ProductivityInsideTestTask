@@ -9,7 +9,7 @@ import org.koin.dsl.module
 /**
  * Created by trisiss on 8/14/2021.
  */
-val appModule = module{
+val appModule = module {
     // ViewModels
     viewModel { MainViewModel(get()) }
     // Services

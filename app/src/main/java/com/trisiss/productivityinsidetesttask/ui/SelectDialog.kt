@@ -1,18 +1,12 @@
 package com.trisiss.productivityinsidetesttask.ui
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.trisiss.productivityinsidetesttask.R
 import com.trisiss.productivityinsidetesttask.ui.main.OnDialogItemSelected
-import kotlinx.coroutines.NonCancellable.cancel
 
 /**
  * Created by trisiss on 8/14/2021.
