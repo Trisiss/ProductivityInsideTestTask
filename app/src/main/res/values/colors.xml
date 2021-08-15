@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_night">#263238</color>
+    <color name="primary_dark_night">#000a12</color>
+    <color name="primary_light">#0277bd</color>
+    <color name="primary_dark_light">#004c8c</color>
 </resources>

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement
 /**
  * Created by trisiss on 8/14/2021.
  */
-@JacksonXmlRootElement
+
 class ValCurs {
     @JacksonXmlProperty(localName = "Data")
     var data: String = ""

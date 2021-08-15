@@ -17,5 +17,5 @@ data class Valute(
     @JacksonXmlProperty(localName = "Name")
     val name: String,
     @JacksonXmlProperty(localName = "Value")
-    val value: Float
+    val value: String
 )

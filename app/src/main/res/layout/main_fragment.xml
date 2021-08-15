@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="vm"
+            type="com.trisiss.productivityinsidetesttask.ui.main.MainViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -14,23 +20,26 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="100dp"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@id/currencyRight"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textCurrencyLeft"
+            android:text="1"/>
 
         <EditText
             android:id="@+id/currencyRight"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:layout_marginEnd="30dp"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/currencyLeft"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textCurrencyRight"
+            android:text="1"/>
 
         <TextView
             android:id="@+id/textCurrencyLeft"
@@ -41,6 +50,8 @@
             app:layout_constraintEnd_toEndOf="@id/currencyLeft"
             app:layout_constraintStart_toStartOf="@id/currencyLeft"
             app:layout_constraintTop_toBottomOf="@id/currencyLeft"
+            app:layout_constraintBottom_toTopOf="@id/changeCurrencyLeft"
+            android:text="@{vm.leftCurrency.charCode}"
             tools:text="RU" />
 
         <TextView
@@ -52,6 +63,8 @@
             app:layout_constraintEnd_toEndOf="@id/currencyRight"
             app:layout_constraintStart_toStartOf="@id/currencyRight"
             app:layout_constraintTop_toBottomOf="@id/currencyRight"
+            app:layout_constraintBottom_toTopOf="@id/changeCurrencyRight"
+            android:text="@{vm.rightCurrency.charCode}"
             tools:text="USD" />
 
         <Button
@@ -61,7 +74,9 @@
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="@id/currencyLeft"
             app:layout_constraintStart_toStartOf="@id/currencyLeft"
-            app:layout_constraintTop_toBottomOf="@id/textCurrencyLeft" />
+            app:layout_constraintTop_toBottomOf="@id/textCurrencyLeft"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/button_change_currency"/>
 
         <Button
             android:id="@+id/changeCurrencyRight"
@@ -70,7 +85,18 @@
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="@id/currencyRight"
             app:layout_constraintStart_toStartOf="@id/currencyRight"
-            app:layout_constraintTop_toBottomOf="@id/textCurrencyRight" />
+            app:layout_constraintTop_toBottomOf="@id/textCurrencyRight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/button_change_currency"/>
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
